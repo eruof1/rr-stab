@@ -75,7 +75,7 @@ function PricesPage() {
       <section className="bg-background py-14 sm:py-20">
         <div className="mx-auto max-w-7xl space-y-14 px-4 sm:px-6 sm:space-y-20">
           <div>
-            <h2 className="text-3xl font-black uppercase text-foreground sm:text-4xl">Стабилизаторы</h2>
+            <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Стабилизаторы</h2>
             <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {stabilizers.map((item) => <ProductCard key={item.model} item={item} />)}
             </div>
