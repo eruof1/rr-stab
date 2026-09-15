@@ -63,7 +63,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="industrial-grid bg-service-panel py-14 sm:py-20">
+      <section id="signs" className="industrial-grid scroll-mt-20 bg-service-panel py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <h2 className="text-center text-3xl font-black uppercase sm:text-4xl">Признаки неисправности</h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
