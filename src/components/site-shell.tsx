@@ -19,8 +19,8 @@ const nav = [
 
 export function Brand() {
   return (
-    <Link to="/" className="group whitespace-nowrap text-xl font-black uppercase leading-none text-foreground sm:text-2xl" aria-label="RR RESURSE — главная">
-      <span>RR </span><span className="text-primary">RESURSE</span>
+    <Link to="/" className="group whitespace-nowrap text-xl font-black uppercase leading-none text-foreground sm:text-2xl" aria-label="СТАБ ПАРТНЁР — главная">
+      <span>СТАБ </span><span className="text-primary">ПАРТНЁР</span>
     </Link>
   );
 }
