@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdvantagesRouteImport } from './routes/advantages'
 import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as PricesRouteImport } from './routes/prices'
-import { Route as ProcessRouteImport } from './routes/process'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -35,25 +34,18 @@ const PricesRoute = PricesRouteImport.update({
   path: '/prices',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProcessRoute = ProcessRouteImport.update({
-  id: '/process',
-  path: '/process',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/advantages': typeof AdvantagesRoute
   '/contacts': typeof ContactsRoute
   '/prices': typeof PricesRoute
-  '/process': typeof ProcessRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/advantages': typeof AdvantagesRoute
   '/contacts': typeof ContactsRoute
   '/prices': typeof PricesRoute
-  '/process': typeof ProcessRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,14 +53,13 @@ export interface FileRoutesById {
   '/advantages': typeof AdvantagesRoute
   '/contacts': typeof ContactsRoute
   '/prices': typeof PricesRoute
-  '/process': typeof ProcessRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/advantages' | '/contacts' | '/prices' | '/process'
+  fullPaths: '/' | '/advantages' | '/contacts' | '/prices'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/advantages' | '/contacts' | '/prices' | '/process'
-  id: '__root__' | '/' | '/advantages' | '/contacts' | '/prices' | '/process'
+  to: '/' | '/advantages' | '/contacts' | '/prices'
+  id: '__root__' | '/' | '/advantages' | '/contacts' | '/prices'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,7 +67,6 @@ export interface RootRouteChildren {
   AdvantagesRoute: typeof AdvantagesRoute
   ContactsRoute: typeof ContactsRoute
   PricesRoute: typeof PricesRoute
-  ProcessRoute: typeof ProcessRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -109,13 +99,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/process': {
-      id: '/process'
-      path: '/process'
-      fullPath: '/process'
-      preLoaderRoute: typeof ProcessRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -124,7 +107,6 @@ const rootRouteChildren: RootRouteChildren = {
   AdvantagesRoute: AdvantagesRoute,
   ContactsRoute: ContactsRoute,
   PricesRoute: PricesRoute,
-  ProcessRoute: ProcessRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
