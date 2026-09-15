@@ -1,14 +1,16 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Clock3, ShieldCheck, Tag, Wrench } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CallbackDialog } from "@/components/site-shell";
 import hero from "@/assets/range-rover-hero.jpg";
-import part from "@/assets/stabilizer-part.jpg";
-import wear from "@/assets/suspension-wear.jpg";
-import corrosion from "@/assets/corrosion.jpg";
 import l320Stabilizer from "@/assets/products/l320-stabilizer.jpg.asset.json";
 import l494Stabilizer from "@/assets/products/l494-stabilizer.jpg.asset.json";
 import l405Stabilizer from "@/assets/products/l405-stabilizer.jpg.asset.json";
+import l320Hoses from "@/assets/products/l320-hoses.jpg.asset.json";
+import l320CvJoint from "@/assets/products/l320-cv-joint.jpg.asset.json";
+import l320FrontPipes from "@/assets/products/l320-front-pipes.png.asset.json";
+import l320RearPipes from "@/assets/products/l320-rear-pipes.jpg.asset.json";
+import aceSealKit from "@/assets/products/ace-seal-kit.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,24 +27,50 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const advantages = [
-  { icon: Wrench, title: "Опыт 10+ лет", text: "Знаем конструкцию системы и типовые неисправности" },
-  { icon: ShieldCheck, title: "Гарантия качества", text: "1 год или 30 000 км на восстановленный узел" },
-  { icon: Tag, title: "Выгодные цены", text: "Ремонт дешевле покупки новой детали" },
-  { icon: Clock3, title: "Быстрая замена", text: "Основные модели всегда в обменном фонде" },
+const stabilizers = [
+  {
+    model: "Range Rover Sport L320",
+    detail: "Передний или задний, цена одинаковая. С учётом обмена на ваш неисправный. Land Rover Range Rover Sport первого поколения. При замене стабилизатора нужно обязательно поменять уплотнительные колечки трубок, которые к нему подходят. Все расходные материалы для замены есть в наличии.",
+    price: "23 000 ₽",
+    image: l320Stabilizer.url,
+  },
+  {
+    model: "Range Rover Sport L494",
+    detail: "Передний или задний, цена одинаковая. С учётом обмена на ваш неисправный. Land Rover Range Rover Sport второго поколения. При замене стабилизатора нужно обязательно поменять уплотнительные колечки трубок, которые к нему подходят. Все расходные материалы для замены есть в наличии.",
+    price: "35 000 ₽",
+    image: l494Stabilizer.url,
+  },
+  {
+    model: "Range Rover L405",
+    detail: "Передний или задний, цена одинаковая. С учётом обмена на ваш неисправный. Land Rover Range Rover четвёртого поколения. При замене стабилизатора нужно обязательно поменять уплотнительные колечки трубок, которые к нему подходят. Все расходные материалы для замены есть в наличии.",
+    price: "35 000 ₽",
+    image: l405Stabilizer.url,
+  },
 ];
 
-const issues = [
-  { image: part, title: "Течь жидкости", text: "Следы рабочей жидкости на корпусе активного стабилизатора", accent: false },
-  { image: wear, title: "Стук в подвеске", text: "Глухой стук при проезде неровностей и в поворотах", accent: true },
-  { image: corrosion, title: "Коррозия и шум", text: "Ржавчина на корпусе, скрип или посторонний шум", accent: false },
+const others = [
+  { model: "Гидравлические шланги высокого давления. Передний контур. На RRS L320", detail: "Полный комплект 4 шт. Замена стальных трубок на шланги даёт массу преимуществ: 1. Забываем про ржавчину. 2. Простота замены и дальнейшего обслуживания — не нужно больше снимать кузов или делать дополнительные работы, шланги гибкие и легко прокладываются.", price: "29 990 ₽", image: l320Hoses.url },
+  { model: "Гидравлические шланги высокого давления. Задний контур. На RRS L320", detail: "Полный комплект 2 шт. Замена стальных трубок на шланги даёт массу преимуществ: 1. Забываем про ржавчину. 2. Простота замены и дальнейшего обслуживания — не нужно больше снимать кузов или делать дополнительные работы, шланги гибкие и легко прокладываются.", price: "19 990 ₽", image: l320Hoses.url },
+  { model: "Передний ШРУС заднего кардана на RRS L320", detail: "ШРУС часто изнашивается, и появляется люфт. Официально отдельно он не деталируется — предлагается купить весь кардан в сборе. Мы подобрали ШРУС по всем характеристикам и готовы предложить его вам.", price: "6 500 ₽", image: l320CvJoint.url },
+  { model: "Оригинальные трубки передний контур RRS L320", detail: "Оригинальные металлические трубки ACE на передний контур. В зависимости от мотора и года выпуска были разновидности.", price: "от 65 000 ₽", image: l320FrontPipes.url },
+  { model: "Оригинальные трубки задний контур RRS L320", detail: "Оригинальные металлические трубки ACE на задний контур.", price: "от 35 000 ₽", image: l320RearPipes.url },
+  { model: "Установочные сухари в блок клапанов ACE", detail: "Ремкомплект (набор сальников) блока ACE. Подходит как для L320, так и для L405 / L494.", price: "от 5 500 ₽", image: aceSealKit.url },
 ];
 
-const models = [
-  { name: "Range Rover Sport L320", price: "23 000 ₽", years: "2005–2013", image: l320Stabilizer.url },
-  { name: "Range Rover Sport L494", price: "35 000 ₽", years: "2013–2022", image: l494Stabilizer.url },
-  { name: "Range Rover L405", price: "35 000 ₽", years: "2012–2022", image: l405Stabilizer.url },
-];
+function ProductCard({ item }: { item: { model: string; detail: string; price: string; image: string } }) {
+  return (
+    <article className="flex overflow-hidden rounded border border-border bg-card md:flex-col">
+      <img src={item.image} loading="lazy" width={1200} height={800} alt={item.model} className="aspect-square w-36 shrink-0 bg-muted object-contain md:aspect-[16/10] md:w-full" />
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <h3 className="text-base font-black uppercase sm:text-xl">{item.model}</h3>
+        <p className="mt-2 text-sm text-muted-foreground">{item.detail}</p>
+        <p className="mt-auto pt-5 text-2xl font-black text-primary sm:text-3xl">{item.price}</p>
+        <p className="mt-4 flex items-center gap-2 text-sm"><Check className="size-4 text-primary" />В наличии или под заказ</p>
+        <CallbackDialog><Button variant="service" className="mt-5 w-full">Купить <ArrowRight /></Button></CallbackDialog>
+      </div>
+    </article>
+  );
+}
 
 function HomePage() {
   return (
@@ -63,54 +91,27 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="signs" className="industrial-grid scroll-mt-20 bg-service-panel py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="text-center text-3xl font-black uppercase sm:text-4xl">Признаки неисправности</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {issues.map((issue) => (
-              <article key={issue.title} className="overflow-hidden rounded border border-border bg-card shadow-xl">
-                <img src={issue.image} width={1008} height={704} loading="lazy" alt={issue.title} className="aspect-[16/9] w-full object-cover" />
-                <div className="p-5">
-                  <h3 className={`inline-block rounded-sm px-3 py-1 text-base font-black uppercase ${issue.accent ? "bg-chart-4 text-service-deep" : "bg-primary text-primary-foreground"}`}>{issue.title}</h3>
-                  <p className="mt-4 min-h-12 text-sm leading-6 text-muted-foreground">{issue.text}</p>
-                  <CallbackDialog><Button variant="ghost" className="mt-5 w-full justify-between border-t border-border px-0 pt-4 text-sm font-black uppercase hover:text-primary">Узнать причину <ArrowRight className="size-4" /></Button></CallbackDialog>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-border bg-service-deep py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="mb-9 text-center text-2xl font-black uppercase">Наши преимущества</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {advantages.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="flex gap-4"><Icon className="size-10 shrink-0 stroke-[1.5]" /><div><h3 className="font-black uppercase">{title}</h3><p className="mt-1 text-sm leading-5 text-muted-foreground">{text}</p></div></div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-background py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="text-center text-3xl font-black uppercase">Цены и модели</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {models.map((model) => (
-              <article key={model.name} className="overflow-hidden rounded border border-border bg-card">
-                <div className="relative"><img src={model.image} loading="lazy" width={1200} height={800} alt={`Активный стабилизатор ${model.name}`} className="aspect-[2/1] w-full bg-muted object-contain" /><span className="absolute left-3 top-3 bg-background/90 px-2 py-1 text-xs font-bold">{model.years}</span></div>
-                <div className="p-5"><h3 className="text-xl font-black uppercase">{model.name}</h3><p className="mt-3 text-2xl font-black text-primary">{model.price}</p><ul className="mt-4 space-y-1 text-sm text-muted-foreground"><li>Новые сальники и уплотнения</li><li>Восстановленные магистрали</li><li>Проверка на стенде</li></ul></div>
-              </article>
-            ))}
+        <div className="mx-auto max-w-7xl space-y-14 px-4 sm:px-6 sm:space-y-20">
+          <div>
+            <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Стабилизаторы</h2>
+            <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {stabilizers.map((item) => <ProductCard key={item.model} item={item} />)}
+            </div>
           </div>
-          <div className="mt-8 flex justify-center"><Button asChild variant="serviceOutline" size="lg"><Link to="/prices">Все цены <ArrowRight /></Link></Button></div>
+          <div>
+            <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Что ещё есть у нас?</h2>
+            <div className="mt-6 rounded border border-border bg-service-panel p-5 sm:p-6">
+              <h3 className="text-base font-black uppercase text-primary sm:text-lg">Трубки ACE и альтернатива</h3>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base">В системе активной стабилизации есть стальные трубки ACE, идущие вдоль кузова и соединяющие все узлы воедино. Они очень часто ржавеют и требуют замены. Новые трубки доступны только в оригинале и стоят дорого, а б/у в хорошем состоянии найти сложно. Есть альтернатива — заменить стальные трубки на гидравлические армированные шланги высокого давления. Пока только для Range Rover Sport L320.</p>
+            </div>
+            <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {others.map((item) => <ProductCard key={item.model} item={item} />)}
+            </div>
+          </div>
+          <p className="mx-auto max-w-3xl text-center text-sm leading-6 text-muted-foreground">Стоимость стабилизаторов указана с учётом обмена на неисправный узел. Уточним совместимость и итоговую цену перед заказом.</p>
         </div>
       </section>
-
-      <section className="bg-primary py-7 text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-4 text-center sm:flex-row sm:px-6 sm:text-left"><div><p className="text-xs font-bold uppercase opacity-75">Акция месяца</p><h2 className="mt-1 text-2xl font-black uppercase">Уплотнительные кольца в подарок</h2></div><CallbackDialog><Button variant="outline" size="lg" className="border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary">Получить бонус</Button></CallbackDialog></div>
-      </section>
-
     </>
   );
 }
