@@ -77,7 +77,7 @@ export function SiteHeader() {
         <Brand />
         <nav className="ml-auto hidden items-center gap-7 lg:flex" aria-label="Основная навигация">
           {nav.map((item) => (
-            <Link key={item.to} to={item.to} activeProps={{ className: "text-primary" }} className="text-xs font-extrabold uppercase text-foreground transition-colors hover:text-primary">
+            <Link key={item.label} to={item.to} hash={item.hash} activeProps={{ className: "text-primary" }} className="text-xs font-extrabold uppercase text-foreground transition-colors hover:text-primary">
               {item.label}
             </Link>
           ))}
