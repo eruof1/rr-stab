@@ -6,6 +6,9 @@ import hero from "@/assets/range-rover-hero.jpg";
 import part from "@/assets/stabilizer-part.jpg";
 import wear from "@/assets/suspension-wear.jpg";
 import corrosion from "@/assets/corrosion.jpg";
+import l320Stabilizer from "@/assets/products/l320-stabilizer.jpg.asset.json";
+import l494Stabilizer from "@/assets/products/l494-stabilizer.jpg.asset.json";
+import l405Stabilizer from "@/assets/products/l405-stabilizer.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,9 +39,9 @@ const issues = [
 ];
 
 const models = [
-  { name: "Range Rover L320", price: "от 23 000 ₽", years: "2005–2013" },
-  { name: "Range Rover L494", price: "от 35 000 ₽", years: "2013–2022" },
-  { name: "Range Rover L405", price: "от 35 000 ₽", years: "2012–2022" },
+  { name: "Range Rover Sport L320", price: "23 000 ₽", years: "2005–2013", image: l320Stabilizer.url },
+  { name: "Range Rover Sport L494", price: "35 000 ₽", years: "2013–2022", image: l494Stabilizer.url },
+  { name: "Range Rover L405", price: "35 000 ₽", years: "2012–2022", image: l405Stabilizer.url },
 ];
 
 function HomePage() {
@@ -70,7 +73,7 @@ function HomePage() {
                 <div className="p-5">
                   <h3 className={`inline-block rounded-sm px-3 py-1 text-base font-black uppercase ${issue.accent ? "bg-chart-4 text-service-deep" : "bg-primary text-primary-foreground"}`}>{issue.title}</h3>
                   <p className="mt-4 min-h-12 text-sm leading-6 text-muted-foreground">{issue.text}</p>
-                  <Link to="/process" className="mt-5 flex items-center justify-between border-t border-border pt-4 text-sm font-black uppercase hover:text-primary">Что это значит? <ArrowRight className="size-4" /></Link>
+                  <CallbackDialog><Button variant="ghost" className="mt-5 w-full justify-between border-t border-border px-0 pt-4 text-sm font-black uppercase hover:text-primary">Узнать причину <ArrowRight className="size-4" /></Button></CallbackDialog>
                 </div>
               </article>
             ))}
@@ -95,7 +98,7 @@ function HomePage() {
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {models.map((model) => (
               <article key={model.name} className="overflow-hidden rounded border border-border bg-card">
-                <div className="relative"><img src={hero} loading="lazy" width={1600} height={912} alt={model.name} className="aspect-[2/1] w-full object-cover object-right" /><span className="absolute left-3 top-3 bg-background/90 px-2 py-1 text-xs font-bold">{model.years}</span></div>
+                <div className="relative"><img src={model.image} loading="lazy" width={1200} height={800} alt={`Активный стабилизатор ${model.name}`} className="aspect-[2/1] w-full bg-muted object-contain" /><span className="absolute left-3 top-3 bg-background/90 px-2 py-1 text-xs font-bold">{model.years}</span></div>
                 <div className="p-5"><h3 className="text-xl font-black uppercase">{model.name}</h3><p className="mt-3 text-2xl font-black text-primary">{model.price}</p><ul className="mt-4 space-y-1 text-sm text-muted-foreground"><li>Новые сальники и уплотнения</li><li>Восстановленные магистрали</li><li>Проверка на стенде</li></ul></div>
               </article>
             ))}
