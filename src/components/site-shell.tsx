@@ -12,14 +12,15 @@ import {
 } from "@/components/ui/dialog";
 
 const nav = [
-  { to: "/prices" as const, label: "Цены" },
-  { to: "/advantages" as const, label: "Преимущества" },
-  { to: "/contacts" as const, label: "Контакты" },
+  { to: "/prices" as const, label: "Цены", hash: "" },
+  { to: "/" as const, label: "Признаки неисправности", hash: "signs" },
+  { to: "/advantages" as const, label: "Преимущества", hash: "" },
+  { to: "/contacts" as const, label: "Контакты", hash: "" },
 ];
 
 export function Brand() {
   return (
-    <Link to="/" className="group whitespace-nowrap text-xl font-black uppercase leading-none text-foreground sm:text-2xl" aria-label="СТАБ ПАРТНЁР — главная">
+    <Link to="/" className="group whitespace-nowrap text-2xl font-black uppercase leading-none text-foreground sm:text-3xl lg:text-4xl" aria-label="СТАБ ПАРТНЁР — главная">
       <span>СТАБ </span><span className="text-primary">ПАРТНЁР</span>
     </Link>
   );
@@ -76,7 +77,7 @@ export function SiteHeader() {
         <Brand />
         <nav className="ml-auto hidden items-center gap-7 lg:flex" aria-label="Основная навигация">
           {nav.map((item) => (
-            <Link key={item.to} to={item.to} activeProps={{ className: "text-primary" }} className="text-xs font-extrabold uppercase text-foreground transition-colors hover:text-primary">
+            <Link key={item.label} to={item.to} hash={item.hash || undefined!} activeProps={{ className: "text-primary" }} className="text-xs font-extrabold uppercase text-foreground transition-colors hover:text-primary">
               {item.label}
             </Link>
           ))}
@@ -91,7 +92,7 @@ export function SiteHeader() {
       </div>
       {open && (
         <nav className="grid border-t border-border bg-background p-4 lg:hidden" aria-label="Мобильная навигация">
-          {nav.map((item) => <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="border-b border-border py-3 text-sm font-bold uppercase">{item.label}</Link>)}
+          {nav.map((item) => <Link key={item.label} to={item.to} hash={item.hash || undefined!} onClick={() => setOpen(false)} className="border-b border-border py-3 text-sm font-bold uppercase">{item.label}</Link>)}
           <a href="tel:+79119234791" className="py-4 font-bold">+7 911 923-47-91</a>
           <CallbackDialog />
         </nav>
