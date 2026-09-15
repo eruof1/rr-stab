@@ -52,7 +52,7 @@ function HomePage() {
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,var(--service-deep)_0%,color-mix(in_oklab,var(--service-deep)_92%,transparent)_32%,color-mix(in_oklab,var(--service-deep)_15%,transparent)_68%,color-mix(in_oklab,var(--service-deep)_72%,transparent)_100%)]" />
         <div className="mx-auto flex min-h-[540px] max-w-7xl items-center px-4 py-16 sm:min-h-[620px] sm:px-6">
           <div className="max-w-2xl">
-            <p className="mb-4 text-xs font-black uppercase text-primary">Специализированный сервис Range Rover</p>
+            
             <h1 className="text-4xl font-black uppercase leading-[0.98] sm:text-6xl lg:text-7xl">
               Восстановленные <span className="text-primary">активные</span> стабилизаторы Range Rover
             </h1>
