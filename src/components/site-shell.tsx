@@ -14,19 +14,13 @@ import {
 const nav = [
   { to: "/prices" as const, label: "Цены" },
   { to: "/advantages" as const, label: "Преимущества" },
-  { to: "/process" as const, label: "Процесс" },
   { to: "/contacts" as const, label: "Контакты" },
 ];
 
 export function Brand() {
   return (
-    <Link to="/" className="group flex items-center gap-2" aria-label="ReSurse — главная">
-      <span className="relative block text-2xl font-black leading-none text-foreground">
-        R<span className="text-primary">R</span>
-      </span>
-      <span className="hidden text-[10px] font-bold uppercase leading-[1.05] text-foreground sm:block">
-        Re<br />Surse
-      </span>
+    <Link to="/" className="group whitespace-nowrap text-xl font-black uppercase leading-none text-foreground sm:text-2xl" aria-label="RR RESURSE — главная">
+      <span>RR </span><span className="text-primary">RESURSE</span>
     </Link>
   );
 }
