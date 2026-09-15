@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CallbackDialog, PageHero } from "@/components/site-shell";
+import { CallbackDialog } from "@/components/site-shell";
+import pricesHero from "@/assets/range-rover-prices-hero.jpg.asset.json";
 import l320Stabilizer from "@/assets/products/l320-stabilizer.jpg.asset.json";
 import l494Stabilizer from "@/assets/products/l494-stabilizer.jpg.asset.json";
 import l405Stabilizer from "@/assets/products/l405-stabilizer.jpg.asset.json";
