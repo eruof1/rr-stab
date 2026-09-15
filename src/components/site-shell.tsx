@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/dialog";
 
 const nav = [
-  { to: "/prices" as const, label: "Цены" },
-  { to: "/" as const, hash: "signs", label: "Признаки неисправности" },
-  { to: "/advantages" as const, label: "Преимущества" },
-  { to: "/contacts" as const, label: "Контакты" },
+  { to: "/prices" as const, label: "Цены", hash: "" },
+  { to: "/" as const, label: "Признаки неисправности", hash: "signs" },
+  { to: "/advantages" as const, label: "Преимущества", hash: "" },
+  { to: "/contacts" as const, label: "Контакты", hash: "" },
 ];
 
 export function Brand() {
