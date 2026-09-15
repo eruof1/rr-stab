@@ -111,9 +111,6 @@ function HomePage() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-4 text-center sm:flex-row sm:px-6 sm:text-left"><div><p className="text-xs font-bold uppercase opacity-75">Акция месяца</p><h2 className="mt-1 text-2xl font-black uppercase">Уплотнительные кольца в подарок</h2></div><CallbackDialog><Button variant="outline" size="lg" className="border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary">Получить бонус</Button></CallbackDialog></div>
       </section>
 
-      <section className="bg-service-panel py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6"><h2 className="text-center text-3xl font-black uppercase">Отзывы клиентов</h2><div className="mt-8 grid gap-5 md:grid-cols-3">{["Дмитрий", "Александр", "Николай"].map((name, index) => <blockquote key={name} className="rounded border border-border bg-card p-5"><div className="flex text-chart-4">{Array.from({length: 5}).map((_, i) => <Star key={i} className="size-4 fill-current" />)}</div><p className="mt-4 text-sm leading-6 text-muted-foreground">{index === 0 ? "Проблема с активным стабилизатором решена быстро. Машина снова едет тихо и собранно." : index === 1 ? "Привёз автомобиль утром, вечером уже забрал. Цена совпала с озвученной заранее." : "Отличная диагностика и понятное объяснение работ. Дали гарантию на восстановленный узел."}</p><footer className="mt-4 font-black uppercase">{name}</footer></blockquote>)}</div></div>
-      </section>
     </>
   );
 }
