@@ -42,7 +42,18 @@ const prices = [
 function PricesPage() {
   return (
     <>
-      <PageHero eyebrow="Каталог" title="Все товары и цены" text="Стабилизаторы, гидравлические магистрали и комплектующие для системы ACE Range Rover." />
+      <section className="relative overflow-hidden border-b border-border">
+        <img src={pricesHero.url} alt="Восстановленные активные стабилизаторы на Range Rover" className="absolute inset-0 size-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:py-32">
+          <h1 className="max-w-4xl text-3xl font-black uppercase leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
+            Восстановленные активные стабилизаторы на Range Rover
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg font-bold uppercase leading-7 text-primary sm:text-2xl">
+            На все поколения с гарантией 30000км или 1 год.
+          </p>
+        </div>
+      </section>
       <section className="bg-background py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
