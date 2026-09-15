@@ -58,7 +58,7 @@ function HomePage() {
             </h1>
             <p className="mt-6 text-lg font-bold uppercase sm:text-xl">На все поколения: L320, L494, L405</p>
             <p className="mt-2 font-semibold text-muted-foreground">Гарантия 1 год или 30 000 км</p>
-            <div className="mt-8"><CallbackDialog><Button variant="service" size="lg">Получить консультацию и узнать цену <ArrowRight /></Button></CallbackDialog></div>
+            <div className="mt-8"><CallbackDialog><Button variant="service" size="lg">Заказать или получить консультацию <ArrowRight /></Button></CallbackDialog></div>
           </div>
         </div>
       </section>
