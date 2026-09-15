@@ -92,7 +92,7 @@ export function SiteHeader() {
       </div>
       {open && (
         <nav className="grid border-t border-border bg-background p-4 lg:hidden" aria-label="Мобильная навигация">
-          {nav.map((item) => <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="border-b border-border py-3 text-sm font-bold uppercase">{item.label}</Link>)}
+          {nav.map((item) => <Link key={item.label} to={item.to} hash={item.hash} onClick={() => setOpen(false)} className="border-b border-border py-3 text-sm font-bold uppercase">{item.label}</Link>)}
           <a href="tel:+79119234791" className="py-4 font-bold">+7 911 923-47-91</a>
           <CallbackDialog />
         </nav>
