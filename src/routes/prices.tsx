@@ -63,11 +63,11 @@ function PricesPage() {
       <section className="relative overflow-hidden border-b border-border">
         <img src={pricesHero.url} alt="Восстановленные активные стабилизаторы на Range Rover" className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:py-32">
-          <h1 className="max-w-4xl text-3xl font-black uppercase leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:py-32">
+          <h1 className="mx-auto max-w-4xl text-3xl font-black uppercase leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
             Восстановленные активные стабилизаторы на Range Rover
           </h1>
-          <p className="mt-6 max-w-2xl text-lg font-bold uppercase leading-7 text-primary sm:text-2xl">
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-bold uppercase leading-7 text-primary sm:text-2xl">
             На все поколения с гарантией 30000км или 1 год.
           </p>
         </div>
@@ -81,7 +81,7 @@ function PricesPage() {
             </div>
           </div>
           <div>
-            <h2 className="text-3xl font-black uppercase text-foreground sm:text-4xl">Что ещё есть у нас?</h2>
+            <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Что ещё есть у нас?</h2>
             <div className="mt-6 rounded border border-border bg-service-panel p-5 sm:p-6">
               <h3 className="text-base font-black uppercase text-primary sm:text-lg">Трубки ACE и альтернатива</h3>
               <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base">
