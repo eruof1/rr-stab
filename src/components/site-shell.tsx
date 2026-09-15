@@ -13,13 +13,14 @@ import {
 
 const nav = [
   { to: "/prices" as const, label: "Цены" },
+  { to: "/" as const, hash: "signs", label: "Признаки неисправности" },
   { to: "/advantages" as const, label: "Преимущества" },
   { to: "/contacts" as const, label: "Контакты" },
 ];
 
 export function Brand() {
   return (
-    <Link to="/" className="group whitespace-nowrap text-xl font-black uppercase leading-none text-foreground sm:text-2xl" aria-label="СТАБ ПАРТНЁР — главная">
+    <Link to="/" className="group whitespace-nowrap text-2xl font-black uppercase leading-none text-foreground sm:text-3xl lg:text-4xl" aria-label="СТАБ ПАРТНЁР — главная">
       <span>СТАБ </span><span className="text-primary">ПАРТНЁР</span>
     </Link>
   );
