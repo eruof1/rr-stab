@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Clock3, Gauge, PackageCheck, ShieldCheck, Tag, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CallbackDialog } from "@/components/site-shell";
 import hero from "@/assets/range-rover-hero.jpg";
@@ -57,6 +57,15 @@ const others = [
   { model: "Установочные сухари в блок клапанов ACE", detail: "Ремкомплект (набор сальников) блока ACE. Подходит как для L320, так и для L405 / L494.", price: "от 5 500 ₽", image: aceSealKit.url },
 ];
 
+const advantages = [
+  [Wrench, "Опыт более 10 лет", "Специализируемся на сложных гидравлических системах внедорожников Range Rover."],
+  [ShieldCheck, "Гарантия качества", "Даём письменную гарантию 1 год или 30 000 км на восстановленный узел."],
+  [Tag, "Выгодная стоимость", "Восстановление обходится заметно дешевле покупки нового стабилизатора."],
+  [Clock3, "Быстрая замена", "Обменный фонд популярных моделей помогает сократить время ремонта."],
+  [Gauge, "Проверка на стенде", "Контролируем герметичность и работу узла под нагрузкой до установки."],
+  [PackageCheck, "Комплект новых деталей", "Меняем сальники, уплотнения и изношенные элементы, а не маскируем течь."],
+];
+
 function ProductCard({ item }: { item: { model: string; detail: string; price: string; image: string } }) {
   return (
     <article className="flex overflow-hidden rounded border border-border bg-card md:flex-col">
@@ -100,6 +109,23 @@ function HomePage() {
             </div>
           </div>
           <div>
+            <p className="text-center text-xs font-black uppercase text-primary">Почему RR-STAB</p>
+            <h2 className="mt-3 text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Ремонт без компромиссов</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-muted-foreground sm:text-base">Сохраняем заводскую конструкцию узла, устраняем причину неисправности и подтверждаем результат гарантией.</p>
+            <div className="mt-8 grid gap-px overflow-hidden rounded border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+              {advantages.map(([Icon, title, text]) => {
+                const FeatureIcon = Icon as typeof Wrench;
+                return (
+                  <article key={title as string} className="bg-card p-7">
+                    <FeatureIcon className="size-10 text-primary" />
+                    <h3 className="mt-5 text-lg font-black uppercase">{title as string}</h3>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{text as string}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+          <div>
             <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Что ещё есть у нас?</h2>
             <div className="mt-6 rounded border border-border bg-service-panel p-5 sm:p-6">
               <h3 className="text-base font-black uppercase text-primary sm:text-lg">Трубки ACE и альтернатива</h3>
@@ -110,6 +136,18 @@ function HomePage() {
             </div>
           </div>
           <p className="mx-auto max-w-3xl text-center text-sm leading-6 text-muted-foreground">Стоимость стабилизаторов указана с учётом обмена на неисправный узел. Уточним совместимость и итоговую цену перед заказом.</p>
+        </div>
+      </section>
+
+      <section id="contacts" className="scroll-mt-20 border-t border-border bg-service-panel py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Контакты</h2>
+          <div className="mx-auto mt-8 max-w-xl space-y-6 text-center">
+            <p className="text-lg font-bold sm:text-xl">Мы работаем<br />с 10:00 до 21:00 каждый день. Без выходных.</p>
+            <p className="text-base leading-7 text-muted-foreground sm:text-lg">Адрес: Санкт-Петербург, Ольги Берггольц 36</p>
+            <p className="text-base leading-7 text-muted-foreground sm:text-lg">Телефон: <a href="tel:+79111111111" className="font-bold text-foreground transition-colors hover:text-primary">+7 911 111 11 11</a></p>
+            <CallbackDialog><Button variant="service" size="lg">Заказать звонок <ArrowRight /></Button></CallbackDialog>
+          </div>
         </div>
       </section>
     </>

@@ -16,7 +16,7 @@ const WHATSAPP_URL = "https://www.ixbt.com/";
 const nav = [
   { to: "/" as const, label: "Цены", hash: "stabilizers" },
   { to: "/advantages" as const, label: "Преимущества", hash: "" },
-  { to: "/contacts" as const, label: "Контакты", hash: "" },
+  { to: "/" as const, label: "Контакты", hash: "contacts" },
 ];
 
 function WhatsAppIcon({ className }: { className?: string }) {

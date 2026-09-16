@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdvantagesRouteImport } from './routes/advantages'
-import { Route as ContactsRouteImport } from './routes/contacts'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,40 +22,31 @@ const AdvantagesRoute = AdvantagesRouteImport.update({
   path: '/advantages',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactsRoute = ContactsRouteImport.update({
-  id: '/contacts',
-  path: '/contacts',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/advantages': typeof AdvantagesRoute
-  '/contacts': typeof ContactsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/advantages': typeof AdvantagesRoute
-  '/contacts': typeof ContactsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/advantages': typeof AdvantagesRoute
-  '/contacts': typeof ContactsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/advantages' | '/contacts'
+  fullPaths: '/' | '/advantages'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/advantages' | '/contacts'
-  id: '__root__' | '/' | '/advantages' | '/contacts'
+  to: '/' | '/advantages'
+  id: '__root__' | '/' | '/advantages'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdvantagesRoute: typeof AdvantagesRoute
-  ContactsRoute: typeof ContactsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,20 +65,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvantagesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contacts': {
-      id: '/contacts'
-      path: '/contacts'
-      fullPath: '/contacts'
-      preLoaderRoute: typeof ContactsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdvantagesRoute: AdvantagesRoute,
-  ContactsRoute: ContactsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
