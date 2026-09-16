@@ -91,7 +91,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="bg-background py-14 sm:py-20">
+      <section id="stabilizers" className="scroll-mt-20 bg-background py-14 sm:py-20">
         <div className="mx-auto max-w-7xl space-y-14 px-4 sm:px-6 sm:space-y-20">
           <div>
             <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Стабилизаторы</h2>
