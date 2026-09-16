@@ -109,6 +109,23 @@ function HomePage() {
             </div>
           </div>
           <div>
+            <p className="text-center text-xs font-black uppercase text-primary">Почему RR-STAB</p>
+            <h2 className="mt-3 text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Ремонт без компромиссов</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-muted-foreground sm:text-base">Сохраняем заводскую конструкцию узла, устраняем причину неисправности и подтверждаем результат гарантией.</p>
+            <div className="mt-8 grid gap-px overflow-hidden rounded border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+              {advantages.map(([Icon, title, text]) => {
+                const FeatureIcon = Icon as typeof Wrench;
+                return (
+                  <article key={title as string} className="bg-card p-7">
+                    <FeatureIcon className="size-10 text-primary" />
+                    <h3 className="mt-5 text-lg font-black uppercase">{title as string}</h3>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{text as string}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+          <div>
             <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Что ещё есть у нас?</h2>
             <div className="mt-6 rounded border border-border bg-service-panel p-5 sm:p-6">
               <h3 className="text-base font-black uppercase text-primary sm:text-lg">Трубки ACE и альтернатива</h3>
