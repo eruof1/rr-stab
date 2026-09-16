@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Clock3, Gauge, PackageCheck, ShieldCheck, Tag, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CallbackDialog } from "@/components/site-shell";
 import hero from "@/assets/range-rover-hero.jpg";
