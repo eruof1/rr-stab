@@ -138,6 +138,18 @@ function HomePage() {
           <p className="mx-auto max-w-3xl text-center text-sm leading-6 text-muted-foreground">Стоимость стабилизаторов указана с учётом обмена на неисправный узел. Уточним совместимость и итоговую цену перед заказом.</p>
         </div>
       </section>
+
+      <section id="contacts" className="scroll-mt-20 border-t border-border bg-service-panel py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Контакты</h2>
+          <div className="mx-auto mt-8 max-w-xl space-y-6 text-center">
+            <p className="text-lg font-bold sm:text-xl">Мы работаем<br />с 10:00 до 21:00 каждый день. Без выходных.</p>
+            <p className="text-base leading-7 text-muted-foreground sm:text-lg">Адрес: Санкт-Петербург, Ольги Берггольц 36</p>
+            <p className="text-base leading-7 text-muted-foreground sm:text-lg">Телефон: <a href="tel:+79111111111" className="font-bold text-foreground transition-colors hover:text-primary">+7 911 111 11 11</a></p>
+            <CallbackDialog><Button variant="service" size="lg">Заказать звонок <ArrowRight /></Button></CallbackDialog>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
