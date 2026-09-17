@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -96,33 +95,21 @@ function MessengerLinks({ compact = false }: { compact?: boolean }) {
 }
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center gap-5 px-4 sm:px-6">
+      <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3 sm:px-6 lg:flex-nowrap lg:gap-5 lg:py-0">
         <Brand />
-        <nav className="ml-auto hidden items-center gap-7 lg:flex" aria-label="Основная навигация">
+        <nav className="order-3 flex w-full items-center justify-between gap-3 lg:order-none lg:ml-auto lg:w-auto lg:justify-start lg:gap-7" aria-label="Основная навигация">
           {nav.map((item) => (
             <Link key={item.label} to={item.to} {...(item.hash ? { hash: item.hash } : {})} activeProps={{ className: "text-primary" }} className="text-xs font-extrabold uppercase text-foreground transition-colors hover:text-primary">
               {item.label}
             </Link>
           ))}
         </nav>
-        <div className="ml-auto hidden sm:flex lg:ml-5">
-          <MessengerLinks />
+        <div className="ml-auto flex lg:ml-5">
+          <MessengerLinks compact />
         </div>
-        <div className="hidden sm:block"><CallbackDialog /></div>
-        <Button variant="ghost" size="icon" className="lg:hidden" aria-label={open ? "Закрыть меню" : "Открыть меню"} onClick={() => setOpen((value) => !value)}>
-          {open ? <X /> : <Menu />}
-        </Button>
       </div>
-      {open && (
-        <nav className="grid gap-1 border-t border-border bg-background p-4 lg:hidden" aria-label="Мобильная навигация">
-          {nav.map((item) => <Link key={item.label} to={item.to} {...(item.hash ? { hash: item.hash } : {})} onClick={() => setOpen(false)} className="border-b border-border py-3 text-sm font-bold uppercase">{item.label}</Link>)}
-          <div className="py-4"><MessengerLinks /></div>
-          <CallbackDialog />
-        </nav>
-      )}
     </header>
   );
 }
