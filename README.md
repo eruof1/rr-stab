@@ -1,26 +1,47 @@
-# Pixel Perfect Site Creator
+# RR-STAB
 
-Создай по этому макету сайт точь-в-точь. много страничный
+Одностраничный сайт сервиса по восстановлению активных стабилизаторов Range Rover.
 
-This project was built with [Lovable](https://lovable.dev).
+## Что есть на сайте
 
-**Live app**: https://rr-stab.lovable.app
+- hero-блок с описанием услуги;
+- признаки неисправности активного стабилизатора;
+- цены на стабилизаторы L320, L494 и L405;
+- раздел запчастей и комплектующих ACE;
+- преимущества и этапы работы;
+- FAQ;
+- контакты с адресом и картой Яндекс;
+- адаптивная версия для телефонов и планшетов.
 
-## Build with Lovable
+## Запуск локально
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a41ac8ec-4240-447e-a7f1-fefb55ff90f4).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Требуется Node.js и npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+После запуска сайт доступен по адресу, который покажет Vite, обычно `http://localhost:5173/`.
+
+## Проверка проекта
+
+```sh
+npm run build
+npm run lint
+```
+
+## Структура
+
+- `src/routes/index.tsx` — содержимое главной страницы;
+- `src/components/site-shell.tsx` — шапка, подвал и окно связи;
+- `src/components/ui` — переиспользуемые UI-компоненты;
+- `src/assets` — локальные изображения;
+- `public/sitemap.xml` — карта сайта;
+- `public/og-image.svg` — изображение для предпросмотра ссылок.
+
+## Контакты
+
+Адрес сервиса: Санкт-Петербург, Ольги Берггольц 36.
+
+Ссылки WhatsApp и Telegram пока оставлены заглушками до получения рабочих контактных адресов.

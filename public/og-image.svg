@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b151c"/>
+  <rect x="52" y="52" width="1096" height="526" fill="#14232c" stroke="#d7192d" stroke-width="4"/>
+  <text x="100" y="220" fill="#ffffff" font-family="Arial, sans-serif" font-size="86" font-weight="900">RR-<tspan fill="#d7192d">STAB</tspan></text>
+  <text x="100" y="330" fill="#ffffff" font-family="Arial, sans-serif" font-size="48" font-weight="700">Восстановление активных</text>
+  <text x="100" y="395" fill="#ffffff" font-family="Arial, sans-serif" font-size="48" font-weight="700">стабилизаторов Range Rover</text>
+  <text x="100" y="490" fill="#aebbc2" font-family="Arial, sans-serif" font-size="30">Гарантия 1 год или 30 000 км</text>
+</svg>
