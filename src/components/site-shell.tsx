@@ -15,7 +15,7 @@ const WHATSAPP_URL = "https://www.ixbt.com/";
 
 const nav = [
   { to: "/" as const, label: "Цены", hash: "stabilizers" },
-  { to: "/advantages" as const, label: "Преимущества", hash: "" },
+  { to: "/" as const, label: "Преимущества", hash: "advantages" },
   { to: "/" as const, label: "Контакты", hash: "contacts" },
 ];
 
