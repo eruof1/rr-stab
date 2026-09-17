@@ -132,7 +132,7 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-service-deep">
       <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <Brand />
-        <p>Санкт-Петербург, ул. Седова, 12</p>
+        <p>Санкт-Петербург, Ольги Берггольц 36</p>
         <MessengerLinks />
       </div>
     </footer>
