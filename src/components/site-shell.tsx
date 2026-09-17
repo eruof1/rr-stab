@@ -36,7 +36,7 @@ function TelegramIcon({ className }: { className?: string }) {
 
 export function Brand() {
   return (
-    <Link to="/" className="group whitespace-nowrap text-2xl font-black uppercase leading-none text-foreground sm:text-3xl lg:text-4xl" aria-label="RR-STAB — главная">
+    <Link to="/" hash="top" className="group whitespace-nowrap text-2xl font-black uppercase leading-none text-foreground sm:text-3xl lg:text-4xl" aria-label="RR-STAB — начало сайта">
       <span>RR-</span><span className="text-primary">STAB</span>
     </Link>
   );
@@ -107,7 +107,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="ml-auto flex lg:ml-5">
-          <MessengerLinks compact />
+          <MessengerLinks />
         </div>
       </div>
     </header>
