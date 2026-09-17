@@ -108,7 +108,7 @@ function HomePage() {
               {stabilizers.map((item) => <ProductCard key={item.model} item={item} />)}
             </div>
           </div>
-          <div>
+          <div id="advantages" className="scroll-mt-20">
             <p className="text-center text-xs font-black uppercase text-primary">Почему RR-STAB</p>
             <h2 className="mt-3 text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Ремонт без компромиссов</h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-muted-foreground sm:text-base">Сохраняем заводскую конструкцию узла, устраняем причину неисправности и подтверждаем результат гарантией.</p>
