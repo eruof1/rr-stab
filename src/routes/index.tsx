@@ -66,6 +66,18 @@ const advantages = [
   [PackageCheck, "Комплект новых деталей", "Меняем сальники, уплотнения и изношенные элементы, а не маскируем течь."],
 ];
 
+const faq = [
+  ["Какая гарантия?", "1 год или 30000км. Что наступит раньше."],
+  [
+    "Есть ли возможность отправить свой стабилизатор после получения вашего?",
+    "Да, мы даем возможность дослать свой стабилизатор после установки нашего. Залог 10000р. Возвращается после получения вашего. Транспортные расходы на вас.",
+  ],
+  [
+    "Отправляете ли в другие города?",
+    "Да, отправляем по всей России и СНГ транспортной компанией Сдэк из Санкт-Петербурга или Москвы. Транспортные расходы на вас.",
+  ],
+];
+
 function ProductCard({ item }: { item: { model: string; detail: string; price: string; image: string } }) {
   return (
     <article className="flex overflow-hidden rounded border border-border bg-card md:flex-col">
@@ -84,9 +96,9 @@ function ProductCard({ item }: { item: { model: string; detail: string; price: s
 function HomePage() {
   return (
     <>
-      <section className="relative isolate min-h-[540px] overflow-hidden border-b border-border sm:min-h-[620px]">
-        <img src={hero} width={1600} height={912} alt="Range Rover в сервисной зоне ReSurse" className="absolute inset-0 -z-20 h-full w-full object-cover object-[62%_center]" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,var(--service-deep)_0%,color-mix(in_oklab,var(--service-deep)_92%,transparent)_32%,color-mix(in_oklab,var(--service-deep)_15%,transparent)_68%,color-mix(in_oklab,var(--service-deep)_72%,transparent)_100%)]" />
+      <section id="top" className="relative isolate min-h-[540px] scroll-mt-20 overflow-hidden border-b border-border sm:min-h-[620px]">
+        <img src={hero} width={1600} height={912} alt="Range Rover в сервисной зоне RR-STAB" className="absolute inset-0 -z-20 h-full w-full object-cover object-[62%_center] brightness-125 saturate-110" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,var(--service-deep)_0%,color-mix(in_oklab,var(--service-deep)_78%,transparent)_32%,color-mix(in_oklab,var(--service-deep)_5%,transparent)_68%,color-mix(in_oklab,var(--service-deep)_50%,transparent)_100%)]" />
         <div className="mx-auto flex min-h-[540px] max-w-7xl items-center px-4 py-16 sm:min-h-[620px] sm:px-6">
           <div className="max-w-2xl">
             
@@ -126,9 +138,9 @@ function HomePage() {
             </div>
           </div>
           <div>
-            <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Что ещё есть у нас?</h2>
+            <h2 className="text-center text-4xl font-black uppercase text-foreground sm:text-5xl">Что ещё есть у нас?</h2>
             <div className="mt-6 rounded border border-border bg-service-panel p-5 sm:p-6">
-              <h3 className="text-base font-black uppercase text-primary sm:text-lg">Трубки ACE и альтернатива</h3>
+              <h3 className="text-center text-base font-black uppercase text-foreground sm:text-lg">Трубки ACE и альтернатива</h3>
               <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base">В системе активной стабилизации есть стальные трубки ACE, идущие вдоль кузова и соединяющие все узлы воедино. Они очень часто ржавеют и требуют замены. Новые трубки доступны только в оригинале и стоят дорого, а б/у в хорошем состоянии найти сложно. Есть альтернатива — заменить стальные трубки на гидравлические армированные шланги высокого давления. Пока только для Range Rover Sport L320.</p>
             </div>
             <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -139,14 +151,34 @@ function HomePage() {
         </div>
       </section>
 
+      <section id="faq" className="scroll-mt-20 border-t border-border bg-background py-14 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Часто задаваемые вопросы / FAQ</h2>
+          <div className="mt-8 divide-y divide-border border-y border-border">
+            {faq.map(([question, answer]) => (
+              <article key={question} className="py-6">
+                <h3 className="text-xl font-black uppercase text-foreground">{question}</h3>
+                <p className="mt-3 text-base leading-7 text-muted-foreground">{answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contacts" className="scroll-mt-20 border-t border-border bg-service-panel py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="text-center text-3xl font-black uppercase text-foreground sm:text-4xl">Контакты</h2>
-          <div className="mx-auto mt-8 max-w-xl space-y-6 text-center">
-            <p className="text-lg font-bold sm:text-xl">Мы работаем<br />с 10:00 до 21:00 каждый день. Без выходных.</p>
-            <p className="text-base leading-7 text-muted-foreground sm:text-lg">Адрес: Санкт-Петербург, Ольги Берггольц 36</p>
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <h2 className="text-3xl font-black uppercase text-foreground sm:text-4xl">Контакты</h2>
+          <div className="mx-auto mt-8 max-w-2xl space-y-6 text-center">
+            <div className="space-y-2">
+              <p className="text-xl font-black uppercase text-foreground sm:text-2xl">Мы работаем</p>
+              <p className="text-lg font-bold text-foreground sm:text-xl">с 10:00 до 21:00 каждый день. Без выходных.</p>
+            </div>
+            <div className="border-t border-border" />
+            <p className="text-base font-black leading-7 text-foreground sm:text-lg">Адрес:&nbsp;Санкт-Петербург, Ольги Берггольц 36</p>
+            <div className="border-t border-border" />
             <p className="text-base leading-7 text-muted-foreground sm:text-lg">Телефон: <a href="tel:+79111111111" className="font-bold text-foreground transition-colors hover:text-primary">+7 911 111 11 11</a></p>
-            <CallbackDialog><Button variant="service" size="lg">Заказать звонок <ArrowRight /></Button></CallbackDialog>
+            <div className="border-t border-border" />
+            <a href="https://t.me/timber827" target="_blank" rel="noopener noreferrer" className="inline-flex text-base font-bold text-foreground transition-colors hover:text-primary">telegram</a>
           </div>
         </div>
       </section>
