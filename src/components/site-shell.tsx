@@ -15,7 +15,7 @@ const WHATSAPP_URL = "https://www.ixbt.com/";
 
 const nav = [
   { to: "/" as const, label: "Цены", hash: "stabilizers" },
-  { to: "/advantages" as const, label: "Преимущества", hash: "" },
+  { to: "/" as const, label: "Преимущества", hash: "advantages" },
   { to: "/" as const, label: "Контакты", hash: "contacts" },
 ];
 
@@ -132,7 +132,7 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-service-deep">
       <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <Brand />
-        <p>Санкт-Петербург, ул. Седова, 12</p>
+        <p>Санкт-Петербург, Ольги Берггольц 36</p>
         <MessengerLinks />
       </div>
     </footer>
