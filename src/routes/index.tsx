@@ -19,9 +19,9 @@ const l405Stabilizer = "/img/40556048.jpg";
 // трубки ACE и ремкомплект блока клапанов.
 const l320Hoses = "/img/40556442.jpg";
 const l320CvJoint = "/img/40556405.jpg";
-const l320FrontPipes = "/img/49245805.png";
+const l320FrontPipes = "/img/49245805.jpg";
 const l320RearPipes = "/img/49245907.jpg";
-const aceSealKit = "/img/49246171.png";
+const aceSealKit = "/img/49246171.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
