@@ -199,7 +199,7 @@ function HomePage() {
   return (
     <>
       <section id="top" className="relative isolate min-h-[540px] scroll-mt-20 overflow-hidden border-b border-border sm:min-h-[620px]">
-        <img src={hero} width={1600} height={912} alt="Range Rover в сервисной зоне RR-STAB" className="absolute inset-0 -z-20 h-full w-full object-cover object-[62%_center] brightness-125 saturate-110" />
+        <img src={hero} width={1661} height={947} alt="Range Rover в сервисной зоне RR-STAB" className="absolute inset-0 -z-20 h-full w-full object-cover object-[62%_center] brightness-125 saturate-110" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,var(--service-deep)_0%,color-mix(in_oklab,var(--service-deep)_78%,transparent)_32%,color-mix(in_oklab,var(--service-deep)_5%,transparent)_68%,color-mix(in_oklab,var(--service-deep)_50%,transparent)_100%)]" />
         <div className="mx-auto flex min-h-[540px] max-w-7xl items-center px-4 py-16 sm:min-h-[620px] sm:px-6">
           <div className="max-w-2xl">
