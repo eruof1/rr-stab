@@ -116,7 +116,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3 sm:px-6 lg:flex-nowrap lg:gap-5 lg:py-0">
         <Brand />
-        <nav className="order-3 grid w-full grid-cols-2 gap-x-4 gap-y-2 sm:flex sm:items-center sm:justify-between sm:gap-3 lg:order-none lg:ml-auto lg:w-auto lg:justify-start lg:gap-7" aria-label="Основная навигация">
+        <nav className="order-3 grid w-full grid-cols-3 gap-x-2 gap-y-2 sm:flex sm:items-center sm:justify-between sm:gap-3 lg:order-none lg:ml-auto lg:w-auto lg:justify-start lg:gap-7" aria-label="Основная навигация">
           {nav.map((item) => (
             <Link
               key={item.label}
@@ -124,7 +124,7 @@ export function SiteHeader() {
               hash={item.hash}
               onClick={() => scrollToHash(item.id)}
               activeProps={{ className: "text-primary" }}
-              className="text-sm font-bold uppercase tracking-wide text-white transition-colors hover:text-primary sm:text-base"
+              className="text-center text-sm font-bold uppercase tracking-wide text-white transition-colors hover:text-primary sm:px-0 sm:text-left sm:text-base"
             >
               {item.label}
             </Link>

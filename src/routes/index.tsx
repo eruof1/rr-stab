@@ -168,18 +168,28 @@ function StepCard({ number, title, text }: { number: string; title: string; text
   );
 }
 
-function ProductCard({ item, compactImage = false }: { item: Product; compactImage?: boolean }) {
+function ProductCard({ item, containImage = false }: { item: Product; containImage?: boolean }) {
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded border border-border bg-card shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-200 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_18px_48px_rgba(0,0,0,0.14)]">
-      <div className={`flex ${compactImage ? "aspect-[4/3] p-5" : "aspect-[16/10] p-3"} w-full shrink-0 items-center justify-center bg-[#0b1a22]`}>
-        <img src={item.image} loading="lazy" width={1200} height={800} alt={item.model} className="max-h-full max-w-full object-contain" />
+      {/* Единый фиксированный контейнер для всех карточек: одна высота, одинаковые отступы */}
+      <div className="flex h-56 w-full shrink-0 items-center justify-center bg-[#0b1a22] p-6">
+        <img
+          src={item.image}
+          loading="lazy"
+          width={1200}
+          height={800}
+          alt={item.model}
+          className={containImage ? "h-full w-full object-contain" : "h-full w-full object-cover"}
+        />
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <h3 className="text-base font-black uppercase text-white sm:text-xl">{item.model}</h3>
         <p className="mt-2 text-sm text-muted-foreground">{item.detail}</p>
-        <p className="mt-auto pt-5 text-2xl font-black text-primary sm:text-3xl">{item.price}</p>
-        <p className="mt-4 flex items-center gap-2 text-sm"><Check className="size-4 text-primary" />В наличии или под заказ</p>
-        <CallbackDialog><Button variant="service" className="mt-5 w-full text-white transition-transform duration-200 group-hover:translate-x-0.5">Купить <ArrowRight /></Button></CallbackDialog>
+        <div className="mt-auto pt-6">
+          <p className="text-2xl font-black text-primary sm:text-3xl">{item.price}</p>
+          <p className="mt-4 flex items-center gap-2 text-sm"><Check className="size-4 text-primary" />В наличии или под заказ</p>
+          <CallbackDialog><Button variant="service" className="mt-5 w-full text-white transition-transform duration-200 group-hover:translate-x-0.5">Купить <ArrowRight /></Button></CallbackDialog>
+        </div>
       </div>
     </article>
   );
@@ -263,10 +273,12 @@ function HomePage() {
               <p className="mt-3 text-lg font-medium leading-7 text-foreground sm:text-xl">В системе активной стабилизации есть стальные трубки ACE, идущие вдоль кузова и соединяющие все узлы воедино. Они очень часто ржавеют и требуют замены. Новые трубки доступны только в оригинале и стоят дорого, а б/у в хорошем состоянии найти сложно. Есть альтернатива — заменить стальные трубки на гидравлические армированные шланги высокого давления. Пока только для Range Rover Sport L320.</p>
             </div>
             <div className="mt-8 grid items-stretch gap-5 md:grid-cols-3">
-              {others.map((item) => <ProductCard key={item.model} item={item} compactImage />)}
+              {others.map((item) => (
+                <ProductCard key={item.model} item={item} containImage={item.image === aceSealKit || item.image === l320FrontPipes || item.image === l320RearPipes} />
+              ))}
             </div>
           </div>
-          <p className="mx-auto max-w-3xl text-center text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">Стоимость стабилизаторов указана с учётом обмена на неисправный узел. Уточним совместимость и итоговую цену перед заказом.</p>
+          <p className="mx-auto max-w-3xl text-center text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">Стоимость стабилизаторов указана с учётом обмена на неисправный узел. Перед оформлением заказа мы обязательно уточним совместимость, проверим ваши данные и согласуем итоговую цену, чтобы вы получили именно подходящий и выгодный вариант.</p>
         </div>
       </section>
 
@@ -317,7 +329,7 @@ function HomePage() {
                 </a>
               </div>
             </div>
-            <div className="w-full overflow-hidden rounded border border-border bg-background shadow-[0_10px_30px_rgba(0,0,0,0.18)] lg:w-[420px] lg:shrink-0">
+            <div className="w-full overflow-hidden rounded border border-border bg-background shadow-[0_10px_30px_rgba(0,0,0,0.18)] lg:w-[420px] lg:shrink-0 lg:max-w-[45%]">
               <div className="aspect-[7/6] w-full">
                 <iframe
                   title="Карта проезда RR-STAB"
